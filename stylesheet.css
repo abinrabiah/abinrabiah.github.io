@@ -133,3 +133,96 @@ h2 {
 span.highlight {
   background-color: #ffffd0;
 }
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  text-decoration: none;
+  color: #1772d0;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0px;
+  border: none;
+  text-align: left;
+  outline: none;
+  margin-left: 0px;
+  font-size: 1em;
+  margin-bottom: 0px;
+  }
+  .collapsible:hover {
+    text-decoration: underline;
+  }
+  
+  .content {
+  padding: 0 0px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  }
+
+
+/* BibTex */
+.content pre {
+	font-family:'Courier New', Courier, monospace;
+	font-size: 14px;
+	font-weight: 600;
+	white-space:pre-line;
+	padding-left:0px;
+}
+.papertitle {
+    font-family: 'Lato', Verdana, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.info-table {
+    border: 0;
+    border-spacing: 0;
+    border-collapse: separate;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.heading-with-line {
+  border-bottom: 1px solid #c5c5c5; 
+  padding-bottom: 5px; 
+  display: inline-block;
+  /* margin-bottom: px;  */
+  display: block; 
+}
+.news-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.news-table .date-column {
+  padding-left: 20px;
+  width: 20%;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+.news-table .content-column {
+  padding-right: 20px;
+}
+
+
+.copy-btn {
+  /* Styling for the copy button */
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px; 
+  width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.copy-btn:hover {
+  background-color: #45a049;
+}
