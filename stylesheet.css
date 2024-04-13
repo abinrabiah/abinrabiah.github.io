@@ -226,3 +226,13 @@ span.highlight {
 .copy-btn:hover {
   background-color: #45a049;
 }
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  text-align: center;
+  padding: 0px 0;
+  z-index: 1000;
+}
