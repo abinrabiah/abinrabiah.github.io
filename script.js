@@ -13,9 +13,15 @@ document.body.addEventListener('click', function(e) {
         var content = e.target.nextElementSibling;
         if (content.style.maxHeight) {
             content.style.maxHeight = null;
-          } else {
+            if (e.target.getAttribute('data-type') === 'tldr') {
+                e.target.innerHTML = 'TL;DR &#9656;'; // Right arrow
+            }
+        } else {
             content.style.maxHeight = content.scrollHeight + "px";
-          }
+            if (e.target.getAttribute('data-type') === 'tldr') {
+                e.target.innerHTML = 'TL;DR &#9662;'; // Down arrow
+            }
+        }
     }
 });
 
