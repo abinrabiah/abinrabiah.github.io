@@ -1,41 +1,30 @@
 
+document.addEventListener('DOMContentLoaded', function() {
+  function adjustBodyPadding() {
+      const fixedTopHeight = document.querySelector('.fixed-top').offsetHeight; // Get the height of the fixed-top element
+      document.body.style.paddingTop = fixedTopHeight + 'px'; // Set the body's padding-top to this height
+  }
+  adjustBodyPadding();
+  window.addEventListener('resize', adjustBodyPadding);
 
-  document.addEventListener('DOMContentLoaded', function() {
-    // Existing collapsible code
-    document.body.addEventListener('click', function(e) {
-      if (e.target.classList.contains('collapsible')) {
+document.body.addEventListener('click', function(e) {
+    if (e.target.classList.contains('collapsible')) {
         e.target.classList.toggle("active");
         var content = e.target.nextElementSibling;
         if (content.style.maxHeight) {
-          content.style.maxHeight = null;
+            content.style.maxHeight = null;
+            if (e.target.getAttribute('data-type') === 'tldr') {
+                e.target.innerHTML = 'TL;DR &#9656;'; // Right arrow
+            }
         } else {
-          content.style.maxHeight = content.scrollHeight + "px";
+            content.style.maxHeight = content.scrollHeight + "px";
+            if (e.target.getAttribute('data-type') === 'tldr') {
+                e.target.innerHTML = 'TL;DR &#9662;'; // Down arrow
+            }
         }
-      }
-    });
-  
-    // Copy button functionality
-    var copyButtons = document.querySelectorAll('.copy-btn');
-    copyButtons.forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var copyTarget = document.querySelector(this.getAttribute('data-copy-target'));
-        var range = document.createRange();
-        range.selectNode(copyTarget);
-        window.getSelection().addRange(range);
-  
-        try {
-          var successful = document.execCommand('copy');
-          var msg = successful ? 'successful' : 'unsuccessful';
-          console.log('Copy command was ' + msg);
-        } catch (err) {
-          console.log('Oops, unable to copy');
-        }
-  
-        window.getSelection().removeAllRanges();
-      });
-    });
+    }
+});
 
-  
     var copyButtons = document.querySelectorAll('.copy-btn');
     copyButtons.forEach(function(btn) {
         btn.addEventListener('click', function() {
@@ -61,32 +50,10 @@
             }
 
             window.getSelection().removeAllRanges();
-        });
-    });
+      });
+  });
 });
 
-
-
-// document.addEventListener("DOMContentLoaded", function() {
-//   // This function will run after the document is fully loaded
-//   const smoothScrollLinks = document.querySelectorAll('a[href^="#"]'); // Selects all links that begin with #
-
-//   smoothScrollLinks.forEach(link => {
-//       link.addEventListener('click', function(e) {
-//           e.preventDefault(); // Prevent the default anchor click behavior
-//           const targetId = this.getAttribute('href'); // Get the href attribute of the clicked link
-//           const targetSection = document.querySelector(targetId); // Get the section that the link points to
-
-//           if (targetSection) {
-//               // Use the scrollIntoView method to smoothly scroll to the section
-//               targetSection.scrollIntoView({
-//                   behavior: 'smooth', // Specifies that the scrolling should be smooth
-//                   block: 'start' // Aligns the block at the start (top) of the viewport if possible
-//               });
-//           }
-//       });
-//   });
-// });
 
 function smoothScrollTo(element, duration, offset = 0) {
   const targetPosition = element.getBoundingClientRect().top + window.pageYOffset - offset;
