@@ -148,7 +148,7 @@ span.highlight {
   margin-left: 0px;
   margin-bottom: 0px;
   display: inline-block;
-  }
+}
   .collapsible:hover {
     text-decoration: underline;
   }
@@ -187,7 +187,6 @@ span.highlight {
   border-bottom: 1px solid #c5c5c5; 
   padding-bottom: 5px; 
   display: inline-block;
-  /* margin-bottom: px;  */
   display: block; 
 }
 .news-table {
