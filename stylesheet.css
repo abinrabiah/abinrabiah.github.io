@@ -135,18 +135,18 @@ span.highlight {
 }
 
 .collapsible {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
-  text-decoration: none;
+  /* font-family: 'Lato', Verdana, Helvetica, sans-serif; */
+  /* font-size: 14px; */
+  /* text-decoration: none; */
   color: #1772d0;
   background-color: transparent;
   cursor: pointer;
   padding: 0;
   border: none;
-  text-align: left;
+  /* text-align: left; */
   outline: none;
   margin: 0;
-  display: inline;
+  /* display: inline; */
 }
   .collapsible:hover {
     text-decoration: underline;
@@ -160,11 +160,11 @@ span.highlight {
   }
 
 
-/* BibTex */
+/* BibTex text */
 .content pre {
-	font-family:'Lato', Verdana, Helvetica, sans-serif;
+	font-family:'Courier New', Courier, monospace;
 	font-size: 14px;
-	font-weight: 600;
+	font-weight: 700;
 	white-space:pre-line;
 	padding-left:0px;
 }
