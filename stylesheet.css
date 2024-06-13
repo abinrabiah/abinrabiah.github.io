@@ -141,12 +141,11 @@ span.highlight {
   color: #1772d0;
   background-color: transparent;
   cursor: pointer;
-  padding: 0px;
+  padding: 0;
   border: none;
   text-align: left;
   outline: none;
-  margin-left: 0px;
-  margin-bottom: 0px;
+  margin: 0;
   display: inline;
 }
   .collapsible:hover {
