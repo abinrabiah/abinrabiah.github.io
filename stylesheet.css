@@ -163,7 +163,7 @@ span.highlight {
 
 /* BibTex */
 .content pre {
-	font-family:'Courier New', Courier, monospace;
+	font-family:'Lato', Verdana, Helvetica, sans-serif;
 	font-size: 14px;
 	font-weight: 600;
 	white-space:pre-line;
