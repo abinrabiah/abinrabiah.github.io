@@ -147,7 +147,7 @@ span.highlight {
   outline: none;
   margin-left: 0px;
   margin-bottom: 0px;
-  display: inline-block;
+  /* display: inline-block; */
 }
   .collapsible:hover {
     text-decoration: underline;
