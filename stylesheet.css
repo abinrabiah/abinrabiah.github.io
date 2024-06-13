@@ -150,6 +150,7 @@ span.highlight {
 }
 
   .collapsible:hover {
+    color: #f09228;
     text-decoration: underline;
   }
   
