@@ -54,7 +54,7 @@
                       <b><a href="https://cseweb.ucsd.edu/~jmcauley/">Julian McAuley</a></b>. 
                       My research interests lie in the intersection of machine learning and personalization.
                       More specifically, I've been exploring problems related to recommender systems and conversational agents
-                      <a href="#www_25">[WWW '25]</a>.
+                     [<a href="#www_25">WWW '25</a>, <a href="#arxiv_25">arXiv '25</a>].
                     </p>
 
 
@@ -154,6 +154,42 @@
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tbody>
 
+            <tr id="arxiv_25" onmouseout="GSPRec_stop()" onmouseover="GSPRec_start()">
+              <td style="padding:20px;width:25%;vertical-align:middle;">
+                <div id='GSPRec_image'>
+                  <img src='images/thumbnails/gsprec.png' style="width:100%; height:auto;">
+                </div>
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:middle;">
+                <a href="https://abinrabiah.com/">
+                  <span class="papertitle">GSPRec: Temporal-Aware Graph Spectral Filtering for Recommendation</span>
+                </a>
+                <br>
+                <strong>Ahmad Bin Rabiah</strong>,
+                <a href="https://cseweb.ucsd.edu/~jmcauley/">Julian McAuley</a>
+                <br>
+                <em>arXiv</em>, 2025
+                <br>
+                <a href="https://arxiv.org/abs/2505.11552">arXiv</a>
+                /
+                <button type="button" class="collapsible">BibTeX</button>
+                <div class="content">
+                  <pre id="bibtex-entry-2025">
+                    @inproceedings{rabiah2025gsprec,
+                      title="GSPRec: Temporal-Aware Graph Spectral Filtering for Recommendation",
+                      author="Ahmad Bin Rabiah and Julian McAuley",
+                      journal="arXiv preprint arXiv:2505.11552",
+                      year="2025"
+                    }
+                  </pre>
+                  <button type="button" class="copy-btn" data-copy-target="#bibtex-entry-2025">Copy BibTeX</button>
+                </div>
+                <button type="button" class="collapsible" data-type="tldr">TL;DR &#9656;</button>
+                <div class="content">
+                  GSPRec advances graph spectral recommenders by encoding temporal dynamics for symmetric Laplacian analysis and utilizing a dual-filter approach to capture user-specific mid-frequency signals.
+                </div>
+              </td>
+            </tr>
 
             <tr id="www_25" onmouseout="personalizedCRS_stop()" onmouseover="personalizedCRS_start()">
               <td style="padding:20px;width:25%;vertical-align:middle;">
@@ -174,8 +210,6 @@
                 <em>WWW</em>, 2025
                 <br>
                 <a href="https://arxiv.org/abs/2412.06949">arXiv</a>
-                /
-                <span style="background-color: #ebebeb;">Project Page (coming soon)</span>
                 /
                 <button type="button" class="collapsible">BibTeX</button>
                 <div class="content">
