@@ -153,7 +153,12 @@ span.highlight {
     color: #f09228;
     text-decoration: underline;
   }
-  
+
+  .collapsible:focus-visible {
+    outline: 2px solid #1772d0;
+    outline-offset: 2px;
+  }
+
   .content {
   padding: 0 0px;
   max-height: 0;
@@ -206,6 +211,36 @@ span.highlight {
 
 .news-table .content-column {
   padding-right: 20px;
+}
+
+.news-toggle {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  color: #999999;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  outline: none;
+  margin: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.news-toggle:hover {
+  color: #f09228;
+  text-decoration: underline;
+}
+
+.news-toggle:focus-visible {
+  outline: 2px solid #1772d0;
+  outline-offset: 2px;
+}
+
+.news-fade {
+  opacity: 0.35;
+  transition: opacity 0.2s ease-out;
 }
 
 

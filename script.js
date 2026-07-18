@@ -7,6 +7,55 @@ document.addEventListener('DOMContentLoaded', function() {
   adjustBodyPadding();
   window.addEventListener('resize', adjustBodyPadding);
 
+  var NEWS_VISIBLE_COUNT = 6;
+  var newsToggleRow = document.getElementById('news-toggle-row');
+  var newsToggleBtn = document.getElementById('news-toggle-btn');
+  var newsList = document.getElementById('news-list');
+  var newsFadeRow = null;
+  var newsExtraContent = null;
+
+  if (newsToggleRow && newsToggleBtn && newsList) {
+    var newsItems = Array.prototype.slice.call(newsList.querySelectorAll('tr.news-item'));
+
+    if (newsItems.length <= NEWS_VISIBLE_COUNT) {
+      newsToggleRow.style.display = 'none';
+    } else {
+      var extraItems = newsItems.slice(NEWS_VISIBLE_COUNT);
+
+      newsFadeRow = newsItems[NEWS_VISIBLE_COUNT - 1];
+      newsFadeRow.classList.add('news-fade');
+
+      var contentRow = document.createElement('tr');
+      var contentCell = document.createElement('td');
+      contentCell.colSpan = 2;
+      contentCell.style.padding = '0';
+      newsExtraContent = document.createElement('div');
+      newsExtraContent.id = 'news-extra-content';
+      newsExtraContent.className = 'content';
+      var innerTable = document.createElement('table');
+      innerTable.style.cssText = 'width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;';
+      var innerBody = document.createElement('tbody');
+      extraItems.forEach(function(row) { innerBody.appendChild(row); });
+      innerTable.appendChild(innerBody);
+      newsExtraContent.appendChild(innerTable);
+      contentCell.appendChild(newsExtraContent);
+      contentRow.appendChild(contentCell);
+      newsFadeRow.insertAdjacentElement('afterend', contentRow);
+
+      newsToggleBtn.addEventListener('click', function() {
+        if (newsExtraContent.style.maxHeight) {
+          newsExtraContent.style.maxHeight = null;
+          newsToggleBtn.innerHTML = '&#9662; Show more';
+          newsFadeRow.classList.add('news-fade');
+        } else {
+          newsExtraContent.style.maxHeight = newsExtraContent.scrollHeight + 'px';
+          newsToggleBtn.innerHTML = '&#9652; Show less';
+          newsFadeRow.classList.remove('news-fade');
+        }
+      });
+    }
+  }
+
 document.body.addEventListener('click', function(e) {
     if (e.target.classList.contains('collapsible')) {
         e.target.classList.toggle("active");
